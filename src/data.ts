@@ -1,3 +1,13 @@
+export const heroPost = {
+  id: "hero",
+  image: "/hero.jpg",
+  alt: "Hero Image",
+  date: "July 23, 2023",
+  title: "My new journey as a bootcamp student",
+  content:
+    "After several months of learning, I am excited to share my progress with you. I've made the big jump from being a complete beginner to building my first React application.",
+};
+
 export const blogPosts = [
   {
     id: 1,
