@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { blogPosts } from "@/data";
+import { Link } from "react-router";
 
 interface Post {
   id: number;
@@ -31,15 +32,20 @@ export default function Posts({ limit, showViewMore = true }: PostsProps) {
   return (
     <section>
       {displayedPosts.map((post: Post) => (
-        <article
-          key={post.id}
-          className="max-w-2xl mx-auto p-4 pt-8 bg-white text-black"
+        <Link
+          to={`/blog/${post.id}`}
+          className="block my-8 cursor-pointer group hover:opacity-95 transition-opacity"
         >
-          <img src={post.image} alt={post.alt} className="w-full h-auto" />
-          <p className="uppercase text-sm my-2">{post.date}</p>
-          <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-          <p>{post.content}</p>
-        </article>
+          <article
+            key={post.id}
+            className="max-w-2xl mx-auto p-4 pt-8 bg-white text-black space-y-2"
+          >
+            <img src={post.image} alt={post.alt} className="w-full h-auto" />
+            <p className="uppercase text-sm my-2">{post.date}</p>
+            <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
+            <p>{post.content}</p>
+          </article>
+        </Link>
       ))}
 
       {showViewMore && hasMorePosts && (
