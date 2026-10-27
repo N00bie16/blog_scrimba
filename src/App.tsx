@@ -4,6 +4,7 @@ import Layout from "@/pages/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import PostDetail from "@/pages/PostDetail";
+import NotFound from "@/pages/NotFound";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog/:id" element={<PostDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
