@@ -8,11 +8,11 @@ export default function Home() {
     <main>
       <Link
         to={`/blog/${heroPost.id}`}
-        className="block my-8 cursor-pointer group hover:opacity-95 transition-opacity"
+        className="block my-2 cursor-pointer group hover:opacity-95 transition-opacity"
       >
         <article
           style={{ backgroundImage: `url(${heroPost.image})` }}
-          className={`max-w-2xl mx-auto p-4 pt-8 bg-cover bg-center text-white`}
+          className={`max-w-2xl mx-auto p-4 pt-8 bg-cover bg-center text-white md:w-3xl md:mx-auto`}
         >
           <div className="px-2 py-8">
             <p className="uppercase text-xs mb-2">{heroPost.date}</p>
