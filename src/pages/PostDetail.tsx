@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 
 import { blogPosts, heroPost } from "@/data";
 import Posts from "@/components/Posts";
+import NotFound from "@/pages/NotFound";
 
 export default function PostDetail() {
   const { id } = useParams<{ id: string }>();
@@ -10,12 +11,12 @@ export default function PostDetail() {
     id === "hero" ? heroPost : blogPosts.find((p) => p.id.toString() === id);
 
   if (!post) {
-    return <div>Post not found</div>;
+    return <NotFound />;
   }
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8 bg-white text-black">
+    <div className="max-w-2xl mx-auto px-4 py-4 bg-white text-black">
       <div className="space-y-4 leading-relaxed">
-        <p className="uppercase text-xs mb-2">{post.date}</p>
+        <p className="uppercase text-sm mb-2">{post.date}</p>
         <h1 className="text-3xl font-bold mt-4">{post.title}</h1>
         <p className="mt-4">{post.content}</p>
       </div>
