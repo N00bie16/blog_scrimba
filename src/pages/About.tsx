@@ -2,13 +2,11 @@ import Posts from "@/components/Posts";
 
 export default function About() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8 bg-white text-black">
+    <div className="max-w-2xl mx-auto px-4 py-6 bg-white text-black">
       <img
-        src="/logo-icon.png"
-        alt="Logo"
-        width={40}
-        height={40}
-        className="mx-auto mt-8"
+        src="/my-foto.jpg"
+        alt="My Photo"
+        className="rounded-full w-42 h-42 object-cover"
       />
       <div className="space-y-4 leading-relaxed">
         <h1 className="text-3xl font-bold mt-8">
