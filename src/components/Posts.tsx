@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { blogPosts } from "@/data";
 import { Link } from "react-router";
 
@@ -17,8 +17,24 @@ interface PostsProps {
 }
 
 export default function Posts({ limit, showViewMore = true }: PostsProps) {
-  const POST_PER_PAGE = 3;
-  const [visiblePosts, setVisiblePosts] = useState(limit || POST_PER_PAGE);
+  const getPostPerPage = () =>
+    typeof window !== "undefined" && window.innerWidth >= 768 ? 6 : 3;
+
+  const [postPerPage, setPostPerPage] = useState(getPostPerPage);
+  const [visiblePosts, setVisiblePosts] = useState(limit || postPerPage);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newPostPerPage = getPostPerPage();
+      setPostPerPage(newPostPerPage);
+
+      if (!limit) {
+        setVisiblePosts((prev) => Math.max(prev, newPostPerPage));
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
 
   const displayedPosts = limit
     ? [...blogPosts].slice(-limit).reverse()
@@ -27,10 +43,10 @@ export default function Posts({ limit, showViewMore = true }: PostsProps) {
   const hasMorePosts = !limit && visiblePosts < blogPosts.length;
 
   const loadMorePosts = () => {
-    setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + POST_PER_PAGE);
+    setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + postPerPage);
   };
   return (
-    <section className="md:w-2xl md:mx-auto md:grid md:grid-cols-3 md:gap-4">
+    <section className="md:max-w-5xl md:mx-auto md:grid md:grid-cols-3 md:gap-4">
       {displayedPosts.map((post: Post) => (
         <Link
           to={`/blog/${post.id}`}
@@ -49,10 +65,10 @@ export default function Posts({ limit, showViewMore = true }: PostsProps) {
       ))}
 
       {showViewMore && hasMorePosts && (
-        <div className="flex justify-center mb-4 md:w-2xl md:mx-auto">
+        <div className="flex justify-center mb-4 md:w-5xl md:mx-auto">
           <button
             onClick={loadMorePosts}
-            className=" text-black px-4 py-2 mb-4 underline font-bold"
+            className=" text-black px-4 py-2 mb-4 underline font-bold cursor-pointer"
           >
             View More
           </button>
