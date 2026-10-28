@@ -14,7 +14,7 @@ export default function PostDetail() {
     return <NotFound />;
   }
   return (
-    <div className="max-w-2xl mx-auto px-4 py-4 bg-white text-black">
+    <div className="max-w-2xl mx-auto px-4 py-4 bg-white text-black md:max-w-5xl md:mx-auto">
       <div className="space-y-4 leading-relaxed">
         <p className="uppercase text-sm mb-2">{post.date}</p>
         <h1 className="text-3xl font-bold mt-4">{post.title}</h1>
