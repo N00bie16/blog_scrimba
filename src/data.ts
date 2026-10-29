@@ -11,7 +11,7 @@ export const heroPost = {
 export const blogPosts = [
   {
     id: 1,
-    image: "/blog-one.png",
+    image: "blog-one.png",
     alt: "Blog One",
     date: "July 23, 2023",
     title: "Blog One",
@@ -20,7 +20,7 @@ export const blogPosts = [
   },
   {
     id: 2,
-    image: "/blog-two.png",
+    image: "blog-two.png",
     alt: "Blog Two",
     date: "August 05, 2023",
     title: "Blog Two",
@@ -29,7 +29,7 @@ export const blogPosts = [
   },
   {
     id: 3,
-    image: "/blog-three.png",
+    image: "blog-three.png",
     alt: "Blog Three",
     date: "August 18, 2023",
     title: "Blog Three",
@@ -38,7 +38,7 @@ export const blogPosts = [
   },
   {
     id: 4,
-    image: "/blog-four.png",
+    image: "blog-four.png",
     alt: "Blog Four",
     date: "September 02, 2023",
     title: "Blog Four",
@@ -47,7 +47,7 @@ export const blogPosts = [
   },
   {
     id: 5,
-    image: "/blog-five.png",
+    image: "blog-five.png",
     alt: "Blog Five",
     date: "September 15, 2023",
     title: "Blog Five",
@@ -56,7 +56,7 @@ export const blogPosts = [
   },
   {
     id: 6,
-    image: "/blog-six.png",
+    image: "blog-six.png",
     alt: "Blog Six",
     date: "October 01, 2023",
     title: "Blog Six",
@@ -65,7 +65,7 @@ export const blogPosts = [
   },
   {
     id: 7,
-    image: "/blog-three.png",
+    image: "blog-three.png",
     alt: "Blog Seven",
     date: "October 20, 2023",
     title: "Blog Seven",
@@ -74,7 +74,7 @@ export const blogPosts = [
   },
   {
     id: 8,
-    image: "/blog-four.png",
+    image: "blog-four.png",
     alt: "Blog Eight",
     date: "November 10, 2023",
     title: "Blog Eight",
@@ -83,7 +83,7 @@ export const blogPosts = [
   },
   {
     id: 9,
-    image: "/blog-five.png",
+    image: "blog-five.png",
     alt: "Blog Nine",
     date: "December 05, 2023",
     title: "Blog Nine",
