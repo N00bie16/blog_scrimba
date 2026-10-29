@@ -1,6 +1,6 @@
 export const heroPost = {
   id: "hero",
-  image: "/hero.jpg",
+  image: "hero.jpg",
   alt: "Hero Image",
   date: "July 23, 2023",
   title: "My new journey as a bootcamp student",

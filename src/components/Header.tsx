@@ -5,7 +5,7 @@ export default function Header() {
     <header className="flex items-center justify-between p-4 bg-white text-black md:max-w-5xl md:mx-auto">
       <Link to="/">
         <div className="flex items-center space-x-2">
-          <img src="/logo-icon.png" alt="Logo" className="w-8 h-8" />
+          <img src="logo-icon.png" alt="Logo" className="w-8 h-8" />
           <p className="font-bold text-lg">My Learning Journal</p>
         </div>
       </Link>
