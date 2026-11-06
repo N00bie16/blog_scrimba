@@ -1,75 +1,81 @@
-# React + TypeScript + Vite
+# My Learning Journal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website blog pembelajaran frontend yang menampilkan catatan perjalanan belajar dan perkembangan sebagai developer. Proyek ini dibangun sebagai latihan pengembangan React dengan TypeScript dan Tailwind CSS.
 
-Currently, two official plugins are available:
+## Fitur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Halaman beranda dengan artikel unggulan dan daftar postingan
+- Navigasi antar posting melalui React Router
+- Halaman detail untuk setiap artikel
+- Tombol **View More** untuk memuat postingan tambahan
+- Halaman About berisi profil dan riwayat pembelajaran
+- Tampilan responsif untuk desktop dan perangkat mobile
+- Halaman Not Found untuk rute yang tidak tersedia
 
-## React Compiler
+## Teknologi
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS 4
+- ESLint
 
-## Expanding the ESLint configuration
+## Menjalankan Proyek
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prasyarat
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js
+- npm atau package manager yang kompatibel
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Instalasi
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+Buka alamat yang ditampilkan Vite di terminal, biasanya `http://localhost:5173`.
+
+### Build produksi
+
+```bash
+npm run build
+```
+
+### Preview build
+
+```bash
+npm run preview
+```
+
+### Pemeriksaan lint
+
+```bash
+npm run lint
+```
+
+## Struktur Utama
+
+```text
+src/
+├── components/   # Header, footer, dan daftar posting
+├── pages/        # Halaman home, about, detail, layout, dan not found
+├── App.tsx       # Konfigurasi routing aplikasi
+├── data.ts       # Data artikel
+└── index.css     # Gaya global dan konfigurasi Tailwind
+```
+
+## Rute
+
+| Rute | Halaman |
+| --- | --- |
+| `/` | Beranda dan daftar posting |
+| `/about` | Profil dan learning journal |
+| `/blog/:id` | Detail posting |
+| `/*` | Halaman Not Found |
