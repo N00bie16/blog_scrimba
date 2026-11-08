@@ -1,13 +1,18 @@
 import Posts from "@/components/Posts";
+import { getPublicAssetUrl } from "@/utils/assets";
 
 export default function About() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 bg-white text-black md:max-w-5xl">
+    <main className="max-w-2xl mx-auto px-4 py-6 bg-white text-black md:max-w-5xl">
       <div className="md:flex md:justify-center md:items-center md:gap-6">
         <img
-          src="/my-foto.jpg"
-          alt="My Photo"
+          src={getPublicAssetUrl("my-foto.webp")}
+          alt="Reynaldi"
           className="rounded-full w-40 h-40 object-cover shrink-0 aspect-square"
+          width={160}
+          height={160}
+          loading="lazy"
+          decoding="async"
         />
         <div className="space-y-2 leading-relaxed">
           <h1 className="text-3xl font-bold mt-8 md:mt-0">
@@ -48,6 +53,6 @@ export default function About() {
       </article>
       <h2 className="text-xl font-bold text-center mt-8">Recent Posts</h2>
       <Posts limit={3} showViewMore={false} />
-    </div>
+    </main>
   );
 }
