@@ -11,5 +11,5 @@ export default defineConfig({
   server: {
     host: true,
   },
-  base: "/blog_scrimba",
+  base: "/blog_scrimba/",
 });
