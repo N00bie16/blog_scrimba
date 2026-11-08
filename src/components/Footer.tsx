@@ -1,8 +1,10 @@
 export default function Footer() {
   return (
-    <div className="bg-[#202020] text-white p-8 text-center h-24 md:max-w-5xl md:mx-auto md:h-full mt-4">
-      <h4>My Learning Journal</h4>
-      <p className="text-sm text-gray-400">Copyright &copy; 2023</p>
-    </div>
+    <footer className="bg-[#202020] text-white p-8 text-center md:max-w-5xl md:mx-auto mt-4">
+      <p className="font-bold">My Learning Journal</p>
+      <p className="text-sm text-gray-400">
+        Copyright &copy; {new Date().getFullYear()}
+      </p>
+    </footer>
   );
 }
