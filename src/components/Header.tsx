@@ -16,7 +16,7 @@ export default function Header() {
         <span className="font-bold text-lg">My Learning Journal</span>
       </Link>
       <nav
-        className="space-x-4 uppercase font-medium text-sm"
+        className="space-x-4 uppercase font-medium text-sm tracking-wide"
         aria-label="Primary navigation"
       >
         <NavLink
